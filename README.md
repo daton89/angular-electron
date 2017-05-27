@@ -4,7 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Package Angular-CLI application into Electron 
 
-run `mkdir src/electron` and add 
+run `npm i -D electron` and  add `mkdir src/electron`
+
 ```json
 // src/electron/package.json
 {
