@@ -1,12 +1,18 @@
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow } = require('electron')
+const path = require('path')
+
+// Reload web content on changes
+require('electron-reload')(path.resolve(__dirname, '../../'), {
+  electron: path.join(path.resolve(__dirname, '../../../'), 'node_modules', '.bin', 'electron')
+});
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({width: 800, height: 600})
+  win = new BrowserWindow({ width: 800, height: 600 })
 
   // and load the index.html of the app.
   win.loadURL(`file://${__dirname}/index.html`)
